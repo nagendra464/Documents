@@ -1,0 +1,6 @@
+sonar.login=admin
+sonar.password=admin
+sonar.projectKey=sample-sonar
+sonar.projectName=sample-sonar
+sonar.projectVersion=1.0
+sonar.sources=.

@@ -1,0 +1,27 @@
+aws s3 mb s3://nagendra464.tk --region us-east-2
+
+
+
+export KOPS_CLUSTER_NAME=nagendra464.tk
+export KOPS_STATE_STORE=s3://nagendra464.tk
+
+
+
+
+ns-736.awsdns-28.net
+ns-1682.awsdns-18.co.uk 
+ns-1108.awsdns-10.org
+ns-393.awsdns-49.com
+
+
+kops create cluster \
+--state=${KOPS_STATE_STORE} \
+--node-count=2 \
+--master-size=t2.micro \
+--node-size=t2.micro \
+--zones=us-east-2a,us-east-2b \
+--name=${KOPS_CLUSTER_NAME} \
+--dns public \
+--master-count 1
+
+ssh admin@api.nagendra464.tk
